@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #3b82f6;
+  --color-cream-bg: #fdfaf5;
+  --color-navy-900: #0f172a;
+}
+
+:root {
+  background-color: #fdfaf5;
+  color: #0f172a;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased bg-[#fdfaf5] text-[#0f172a];
+  overflow-x: hidden;
+}
+
+/* The "Large Watermark Text" from the screenshot background */
+.bg-text-watermark {
+  @apply fixed font-black uppercase tracking-tighter pointer-events-none select-none z-0;
+  color: rgba(15, 23, 42, 0.04); /* Very faint navy */
+  font-size: clamp(10rem, 25vw, 18rem);
+  line-height: 0.8;
+  top: 10%;
+  left: -5%;
+}
+
+/* Curved Card Geometry */
+.curved-card {
+  @apply bg-white rounded-[40px] shadow-sm border border-black/5 transition-all duration-500 ease-out;
+}
+
+.curved-card:hover {
+  @apply -translate-y-3 shadow-2xl border-blue-500/10;
+}
+
+/* Custom Pill Button */
+.btn-pill {
+  @apply px-10 py-4 bg-[#0f172a] text-white rounded-full font-bold transition-all hover:bg-blue-600 hover:shadow-lg active:scale-95;
+}
